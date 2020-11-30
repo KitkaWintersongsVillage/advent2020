@@ -1,0 +1,186 @@
+html { height: 100%; overflow:auto; }
+
+body {
+    /* background: url('village2kw.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding: 0; */
+    max-width: 1400px;
+    max-height: 900px;
+}
+
+.village-image {
+    width: 1400px;
+    height: 900px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: -1;
+}
+
+#logo {
+    width:120px;
+    margin-left: 20px;
+    margin-top: 10px;
+    /* height: 100px; */
+    
+}
+
+nav {
+    width: 95%;
+    
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;    
+}
+
+nav a:hover{
+    color: #f2f2f2;   
+}
+
+@media screen and (max-width:600px){
+    nav a {
+        max-width: 10%;
+    }  
+}
+
+
+
+.right{
+    float: right;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+        border: dashed 3px #a83240;
+        border-radius: 3px;
+	}
+
+	70% {
+		transform: scale(1);
+        border: dashed 3px #a83240;
+        border-radius: 3px;
+	}
+
+	100% {
+		transform: scale(0.95);
+        border: dashed 3px #a83240;
+        border-radius: 3px;
+	}
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		transform: scale(0.95);
+        border: dashed 3px #a83240;
+        border-radius: 3px;
+	}
+
+	70% {
+		transform: scale(1);
+        border: dashed 3px #a83240;
+        border-radius: 3px;
+	}
+
+	100% {
+		transform: scale(0.95);
+        border: dashed 3px #a83240;
+        border-radius: 3px;
+	}
+}
+
+
+@keyframes grow {
+    0% {
+        transform: scale(0.2) rotate(0);
+    }
+    100%{
+        transform: scale(1.0) rotate(120deg);
+    }
+}
+
+@-webkit-keyframes grow {
+    0% {
+        transform: scale(0.2) rotate(0);
+    }
+    100%{
+        transform: scale(1.0) rotate(120deg);
+    }
+}
+
+/* 
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate();
+    }
+} */
+
+img{
+    width: 100%;
+}
+
+
+.box {
+    position: absolute;
+}
+
+.outline {
+    border: dashed 2px #a83240;
+}
+
+.pulsing {
+    border: dashed 3px #a83240;
+    -webkit-border: dashed 3px #a83240;
+    /* animation: pulse 2s infinite;
+    -webkit-animation: pulse 2s infinite; */
+}
+
+.hide{
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.nostar {
+    display: none;
+}
+
+
+.star {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    /* animation: grow 1s; */
+    transition: transform 0.5s linear;
+}
+
+a.divLink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    /* Makes sure the link doesn't get underlined */
+    z-index: 10;
+    /* raises anchor tag above everything else in div */
+    background-color: white;
+    /*workaround to make clickable in IE */
+    opacity: 0;
+    /*workaround to make clickable in IE */
+    filter: alpha(opacity=0);
+    /*workaround to make clickable in IE */
+ }
