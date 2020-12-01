@@ -15,10 +15,12 @@ function getImage(currentHour, day){
     }
 }
 
-function setBoxes(currentDay){
+function setBoxes(currentDay, currentMonth){
    boxes.forEach( box => {
+       if(currentMonth === 11){
         if(currentDay >= box.id && !box.gone){
             box.pulsing = true;
+            }
        }
    })
 }
@@ -29,10 +31,11 @@ const mainImage = document.querySelector('#main-image');
 const time = new Date();
 const hours = time.getHours();
 const day = time.getDate();
+const month = time.getMonth();
 let currentImage = getImage(hours, day);
 mainImage.src = currentImage;
 
-setBoxes(day);
+setBoxes(day, month);
 
 
 
