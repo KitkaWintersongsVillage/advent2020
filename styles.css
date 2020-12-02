@@ -135,10 +135,17 @@ img{
 
 .box {
     position: absolute;
+    z-index: 100;
+}
+
+.no-border {
+    border: none;
+    -webkit-border: none;
+    animation: none;
 }
 
 .outline {
-    border: dashed 2px #a83240;
+    border: dashed 1px #a83240;
 }
 
 .pulsing {
