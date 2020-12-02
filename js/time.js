@@ -20,6 +20,7 @@ function setBoxes(currentDay, currentMonth){
        if(currentMonth === 11){
         if(currentDay >= box.id && !box.gone){
             box.pulsing = true;
+             box.active = true;
             }
        }
    })
