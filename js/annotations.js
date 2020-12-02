@@ -31,7 +31,10 @@ function createBorder(boxId, x, y, w, h, pulsing, gone){
         const {id, x, y} = starOffsets[boxId - 1];
         const rotVal = Math.random() * 180;
         const found = stars.find(el => el.id === boxId);
-        setTimeout(() => changePage(boxId), 500);
+        if(boxes[boxId - 1].active){
+            setTimeout(() => changePage(boxId), 500);
+        }
+        
         if(!found){
             const newStar = {id, x, y, rotVal};
             stars.push(newStar);
