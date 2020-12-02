@@ -26,27 +26,28 @@ function createBorder(boxId, x, y, w, h, pulsing, gone){
         div.className = 'box no-border';
         div.style.animation = '';
     }
-
-    div.addEventListener('click', (e) => {
-        const {id, x, y} = starOffsets[boxId - 1];
-        const rotVal = Math.random() * 180;
-        const found = stars.find(el => el.id === boxId);
-        if(boxes[boxId - 1].active){
-            setTimeout(() => changePage(boxId), 500);
-        }
-        
-        if(!found){
-            const newStar = {id, x, y, rotVal};
-            stars.push(newStar);
-            storage.setItem('starsInStorageArray', JSON.stringify(stars));
-            createNewStar(newStar);
+    if(boxes[boxId - 1].active){
+        div.addEventListener('click', (e) => {
+            const {id, x, y} = starOffsets[boxId - 1];
+            const rotVal = Math.random() * 180;
+            const found = stars.find(el => el.id === boxId);
+            
+                setTimeout(() => changePage(boxId), 500);
+            
+            
+            if(!found){
+                const newStar = {id, x, y, rotVal};
+                stars.push(newStar);
+                storage.setItem('starsInStorageArray', JSON.stringify(stars));
+                createNewStar(newStar);
+                boxes[boxId - 1].gone = true;
+                boxes[boxId - 1].pulsing = false;
+            } 
             boxes[boxId - 1].gone = true;
             boxes[boxId - 1].pulsing = false;
-        } 
-        boxes[boxId - 1].gone = true;
-        boxes[boxId - 1].pulsing = false;
-        e.target.className = 'box no-border';
-    })
+            e.target.className = 'box no-border';
+        })
+    }   
     myContainer.appendChild(div);
     return div
 }
