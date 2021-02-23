@@ -17,12 +17,12 @@ function getImage(currentHour, day){
 
 function setBoxes(currentDay, currentMonth){
    boxes.forEach( box => {
-       if(currentMonth === 11){
-        if(currentDay >= box.id && !box.gone){
+      
+        if(!box.gone){
             box.pulsing = true;
              box.active = true;
             }
-       }
+       
    })
 }
 
